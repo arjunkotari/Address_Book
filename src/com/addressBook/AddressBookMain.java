@@ -20,7 +20,13 @@ public class AddressBookMain {
            l1.add(addressBook.contacts);
            addressBook.addDetails();
            System.out.println(l1);
-           addressBook.editContact();
+            addressBook.editContact();
+            //deleting contact
+           System.out.println("Do want to delete contact (y/n)");
+           char check = scanner.next().charAt(0);
+           if(check == 'y'){
+               l1.remove(addressBook.contacts);
+           }
            System.out.println(l1);
         }
     }
