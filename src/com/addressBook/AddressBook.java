@@ -1,5 +1,6 @@
 package com.addressBook;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,42 +9,53 @@ public class AddressBook {
     Scanner scanner = new Scanner(System.in);
     public String name;
 
-    public ArrayList<Contacts> addressBook = new ArrayList<>();
+    public ArrayList<Contact> addressBook = new ArrayList<>();
 
     public AddressBook(String name) {
         this.name = name;
     }
-
-    public ArrayList<Contacts> getAddressBook() {
+    public ArrayList<Contact> getAddressBook() {
         return addressBook;
     }
 
-
-    // ADD contacts to the addressBook
-    public void addContact(Contacts contact) {
-        for (Contacts value : addressBook) {
-            if (value.equals(contact)) {
-                System.out.println("The person already exists!!!");
-            }
-        }
-        addressBook.add(contact);
-        System.out.println("ADDRESS BOOK- " + addressBook);
-        for (Contacts contact1 : addressBook) {
-            System.out.println("CONTACT LIST- " + contact1);
-        }
+    public void setAddressBook(ArrayList<Contact> addressBook) {
+        this.addressBook = addressBook;
     }
 
+    // method to check for duplicate entry
+    public boolean checkDuplicateEntry(Contact contact) {
+        boolean status = false;
+        for (Contact value : addressBook) {
+            if (value.equals(contact)) {
+                status = true;
+            } else {
+                status = false;
+            }
+        }
+        return status;
+    }
+
+    // ADD CONTACT
+    public void addContact(Contact contact) {
+        boolean duplicateStatus = checkDuplicateEntry(contact);
+        if (!duplicateStatus) {
+            addressBook.add(contact);
+            System.out.println("Contact added successfully!");
+        } else {
+            System.out.println("The person already exists!");
+        }
+        System.out.println("AddressBook Data : " + addressBook);
+    }
 
     // EDIT contact from the addressBook by the FIRSTNAME
     public void editContactByFirstName(String firstname) {
-        String checkName;
+        String editName;
         Integer choice;
-        for (Contacts contact : addressBook) {
-            checkName = contact.getFirstName();
-            if (firstname.equalsIgnoreCase(checkName)) {
+        for (Contact contact : addressBook) {
+            editName = contact.getFirstName();
+            if (firstname.equalsIgnoreCase(editName)) {
                 do {
-
-                    System.out.println("1. Edit First name" + "\n" + "2. Edit Last name" + "\n" + "3. Edit City " + "\n" + "4. Edit City " + "\n" + "5. Edit State" + "\n" + "6. Edit Zipcode " + "\n" + "7. Edit Phone Number" + "\n" + "8. Edit Email" +"\n" + "0. EXIT" + "\n" + "Enter your choice :");
+                    System.out.println("1. Edit First name" + "\n" + "2. Edit Last name" + "\n" + "3. Edit Address " + "\n" + "4. Edit City " + "\n" + "5. Edit State" + "\n" + "6. Edit Zipcode " + "\n" + "7. Edit Phone Number" + "\n" + "8. Edit Email" + "\n" +"0. EXIT" + "\n" + "Enter your choice :");
                     choice = scanner.nextInt();
                     switch (choice) {
                         case 1:
@@ -61,9 +73,9 @@ public class AddressBook {
                             break;
 
                         case 3:
-                            System.out.println("Enter new city:");
-                            String newCity = scanner.next();
-                            contact.setCity(newCity);
+                            System.out.println("Enter new address:");
+                            String newAddress = scanner.next();
+                            contact.setAddress(newAddress);
                             System.out.println(contact);
                             break;
 
@@ -94,8 +106,6 @@ public class AddressBook {
                             contact.setEmail(newEmail);
                             System.out.println(contact);
                             break;
-                        default:
-                            break;
                     }
                 } while (choice != 0);
                 System.out.println(contact);
@@ -105,19 +115,19 @@ public class AddressBook {
         }
     }
 
-
     // DELETE contact from the address book by the FIRSTNAME
     public void deleteContact(String firstname) {
-        String checkName2;
-        for (Contacts contact : addressBook) {
-            checkName2 = contact.getFirstName();
-            System.out.println(checkName2);
-            if (firstname.equalsIgnoreCase(checkName2)) {
+        String deleteName;
+        for (Contact contact : addressBook) {
+            deleteName = contact.getFirstName();
+            System.out.println(deleteName);
+            if (firstname.equalsIgnoreCase(deleteName)) {
                 addressBook.remove(contact);
-                System.out.println("Contact name " + firstname + " deleted successfully from the contact list");
+                System.out.println("Contact name " + firstname + "deleted successfully from the contact list");
             } else {
-                System.out.println("No any user belongs to this " + firstname + " mail id Try Again !!");
+                System.out.println("There is no contact named " + firstname + ". Please Enter a Valid Name!!");
             }
         }
     }
+
 }

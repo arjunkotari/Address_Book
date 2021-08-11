@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>addressBook</name>
+=======
+<<<<<<< HEAD
+	<name>addressBook</name>
+=======
+	<name>Address_Book</name>
+>>>>>>> 4efd02d (Added:No dupilcate data)
+>>>>>>> 53542c4 (Assed:No duplicate data)
 	<comment></comment>
 	<projects>
 	</projects>

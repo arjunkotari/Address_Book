@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53542c4 (Assed:No duplicate data)
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
@@ -8,5 +12,12 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+<<<<<<< HEAD
+=======
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+>>>>>>> 4efd02d (Added:No dupilcate data)
+>>>>>>> 53542c4 (Assed:No duplicate data)
   </component>
 </project>

@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/addressBook.iml" filepath="$PROJECT_DIR$/addressBook.iml" />
+=======
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/addressBook.iml" filepath="$PROJECT_DIR$/addressBook.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Address_Book.iml" filepath="$PROJECT_DIR$/Address_Book.iml" />
+>>>>>>> 4efd02d (Added:No dupilcate data)
+>>>>>>> 53542c4 (Assed:No duplicate data)
     </modules>
   </component>
 </project>

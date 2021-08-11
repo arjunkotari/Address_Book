@@ -1,28 +1,33 @@
 package com.addressBook;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+public class Contacts extends ContactDetails {
+    //variable declaration
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private Long zip;
+    private Long phoneNumber;
+    private String emailId;
 
-public class Contacts {
-
-    public String firstName;
-    public String lastName;
-    public String city;
-    public String state;
-    public String zip;
-    public String phoneNumber;
-    public String email;
-
-    public Contacts(String firstName, String lastName, String city, String state, String zip, String phoneNumber, String email) {
+    public Contacts(String firstName, String lastName, String address, String city, String state, Long zipCode, Long phoneNumber, String email) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
         this.city = city;
         this.state = state;
-        this.zip = zip;
+        this.zip = zipCode;
         this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.emailId = email;
     }
 
+    public Contacts() {
+
+    }
+
+    //getters and setters
     public String getFirstName() {
         return firstName;
     }
@@ -37,6 +42,14 @@ public class Contacts {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCity() {
@@ -55,34 +68,42 @@ public class Contacts {
         this.state = state;
     }
 
-    public String getZip() {
+    public Long getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(Long zip) {
         this.zip = zip;
     }
 
-    public String getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
-    //Overriding java toString method
+
+    @Override
     public String toString() {
-        return "Contact details" + '\n' + "First Name: " + firstName + '\n' + "Last  Name: " + lastName + '\n'
-                + "City : " + city + '\n' + "State : " + state + '\n' + "ZIP : " + zip + '\n' + "Phone Number : " + phoneNumber
-                + '\n' + "Email Id: " + email + '\n';
+        return "ContactDetails{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", emailId='" + emailId + '\'' +
+                '}';
     }
 }
